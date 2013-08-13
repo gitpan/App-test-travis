@@ -27,7 +27,7 @@ no_index:
 provides:
   App::test::travis:
     file: lib/App/test/travis.pm
-    version: v0.9.1
+    version: v0.9.2
 requires:
   File::Spec: 0
   File::Temp: 0
@@ -40,6 +40,6 @@ resources:
   bugtracker: https://github.com/gfx/App-test-travis/issues
   homepage: https://github.com/gfx/App-test-travis
   repository: git://github.com/gfx/App-test-travis.git
-version: v0.9.1
+version: v0.9.2
 x_contributors:
   - 'Fuji, Goro <g.psy.va@gmail.com>'
