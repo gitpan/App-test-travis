@@ -3,7 +3,7 @@ use 5.10.0;
 use strict;
 use warnings;
 
-use version; our $VERSION = version->declare("v0.9.3");
+use version; our $VERSION = version->declare("v0.9.4");
 
 use encoding::warnings 'FATAL';
 use Fatal qw(open close);
@@ -25,7 +25,7 @@ my %tab = (
     cpp => {
         script => './configure && make && make test',
     },
-    closure => {
+    clojure => {
         script => 'lein test',
     },
     elang => {
