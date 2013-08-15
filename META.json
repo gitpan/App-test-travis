@@ -58,7 +58,7 @@
    "provides" : {
       "App::test::travis" : {
          "file" : "lib/App/test/travis.pm",
-         "version" : "v0.9.4"
+         "version" : "v0.9.5"
       }
    },
    "release_status" : "stable",
@@ -72,9 +72,10 @@
          "web" : "https://github.com/gfx/App-test-travis"
       }
    },
-   "version" : "v0.9.4",
+   "version" : "v0.9.5",
    "x_contributors" : [
-      "Fuji, Goro <g.psy.va@gmail.com>",
-      "mooz <stillpedant@gmail.com>"
+      "mooz <stillpedant@gmail.com>",
+      "Hideo Hattori <hattori-h@klab.com>",
+      "Fuji, Goro <g.psy.va@gmail.com>"
    ]
 }

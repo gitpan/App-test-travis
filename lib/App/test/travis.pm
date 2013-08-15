@@ -3,7 +3,7 @@ use 5.10.0;
 use strict;
 use warnings;
 
-use version; our $VERSION = version->declare("v0.9.4");
+use version; our $VERSION = version->declare("v0.9.5");
 
 use encoding::warnings 'FATAL';
 use Fatal qw(open close);
@@ -28,7 +28,7 @@ my %tab = (
     clojure => {
         script => 'lein test',
     },
-    elang => {
+    erlang => {
         install => 'rebar get-deps',
         script => 'rebar compile && rebar skip_deps=true eunit',
     },
@@ -140,10 +140,20 @@ sub run {
     $behavior->{setup}->($config, $tempdir, sub {
         my $versions = $config->{$language} // []; # TODO
 
+        # http://about.travis-ci.org/docs/user/build-configuration/#Build-Lifecycle
         run_commands($config, $DRY_RUN, 'before_install');
         run_commands($config, $DRY_RUN, 'install');
         run_commands($config, $DRY_RUN, 'before_script');
-        run_commands($config, $DRY_RUN, 'script');
+        eval {
+            run_commands($config, $DRY_RUN, 'script');
+        };
+        if (! $@) {
+            run_commands($config, $DRY_RUN, 'after_success');
+        }
+        else {
+            run_commands($config, $DRY_RUN, 'after_failure');
+        }
+        run_commands($config, $DRY_RUN, 'after_script');
 
         say '# finished: ', scalar localtime;
 
@@ -210,6 +220,8 @@ Note that the actual Travis-CI runs projects on Linux, so Linux specific command
 =head1 SEE ALSO
 
 L<http://about.travis-ci.org/docs/user/getting-started/>
+
+L<http://about.travis-ci.org/docs/user/build-configuration/#Build-Lifecycle> for the build lifecycle
 
 =head1 LICENSE
 
