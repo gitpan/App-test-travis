@@ -3,7 +3,7 @@ use 5.10.0;
 use strict;
 use warnings;
 
-use version; our $VERSION = version->declare("v0.9.5");
+use version; our $VERSION = version->declare("v0.9.6");
 
 use encoding::warnings 'FATAL';
 use Fatal qw(open close);
@@ -137,7 +137,7 @@ sub run {
         $config->{$mode} //= $behavior->{$mode};
     }
 
-    $behavior->{setup}->($config, $tempdir, sub {
+    $setup->($config, $tempdir, sub {
         my $versions = $config->{$language} // []; # TODO
 
         # http://about.travis-ci.org/docs/user/build-configuration/#Build-Lifecycle
