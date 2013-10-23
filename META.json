@@ -4,8 +4,10 @@
       "Fuji, Goro (gfx) <gfuji@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.6",
-   "license" : "perl_5",
+   "generated_by" : "Minilla/v0.7.5",
+   "license" : [
+      "perl_5"
+   ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
@@ -19,7 +21,8 @@
          "share",
          "eg",
          "examples",
-         "author"
+         "author",
+         "builder"
       ]
    },
    "prereqs" : {
@@ -58,7 +61,7 @@
    "provides" : {
       "App::test::travis" : {
          "file" : "lib/App/test/travis.pm",
-         "version" : "v0.9.6"
+         "version" : "v0.9.7"
       }
    },
    "release_status" : "stable",
@@ -72,10 +75,11 @@
          "web" : "https://github.com/gfx/App-test-travis"
       }
    },
-   "version" : "v0.9.6",
+   "version" : "v0.9.7",
    "x_contributors" : [
       "mooz <stillpedant@gmail.com>",
+      "Hideo Hattori <hattori-h@klab.com>",
       "Fuji, Goro <g.psy.va@gmail.com>",
-      "Hideo Hattori <hattori-h@klab.com>"
+      "Fuji, Goro <goro-fuji@cookpad.com>"
    ]
 }

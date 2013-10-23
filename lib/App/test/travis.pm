@@ -3,7 +3,7 @@ use 5.10.0;
 use strict;
 use warnings;
 
-use version; our $VERSION = version->declare("v0.9.6");
+use version; our $VERSION = version->declare("v0.9.7");
 
 use encoding::warnings 'FATAL';
 use Fatal qw(open close);
@@ -81,7 +81,7 @@ my %tab = (
     },
 
     ruby => {
-        install => 'bundle exec',
+        install => 'bundle install',
         script => 'bundle exec rake',
     },
 
